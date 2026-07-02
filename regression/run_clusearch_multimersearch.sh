@@ -3,7 +3,7 @@
 QUERY="${DATADIR}/complex/complexdir.tar.gz"
 
 "${FOLDSEEK}" createdb "$QUERY" "$RESULTS/db"
-"${FOLDSEEK}" linclust "$RESULTS/db" "$RESULTS/clu" "$RESULTS/clutmp" --min-seq-id 0.3
+"${FOLDSEEK}" linclust "$RESULTS/db" "$RESULTS/clu" "$RESULTS/clutmp" --min-seq-id 0.3 --linclust-version 1
 "${FOLDSEEK}" createclusearchdb "$RESULTS/db" "$RESULTS/clu" "$RESULTS/clusearchdb"
 "${FOLDSEEK}" easy-multimersearch "$RESULTS/db" "$RESULTS/clusearchdb" "$RESULTS/aln" "$RESULTS/tmp" --chain-tm-threshold 0.5 --multimer-tm-threshold 0 --interface-lddt-threshold 0.3 --cov-mode 1
 
