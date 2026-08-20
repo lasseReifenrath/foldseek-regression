@@ -6,7 +6,7 @@ SCOPANOTATION="${DATADIR}/scop_lookup_bench.tsv"
 
 "${FOLDSEEK}" cluster "$INPUTDB"  "${INPUTDB}_clu" "$RESULTS/tmp" -c 0.9 --min-seq-id 0.3 -s 9
 "${FOLDSEEK}" createclusearchdb  "${INPUTDB}" "${INPUTDB}_clu" "$RESULTS/db"
-"${FOLDSEEK}" createindex "$RESULTS/db" tmp --index-exclude 3 
+"${FOLDSEEK}" createindex "$RESULTS/db" "$RESULTS/tmp" --index-exclude 3 
 "${FOLDSEEK}" easy-search "${INPUT}" "$RESULTS/db" "$RESULTS/results_aln.m8" "$RESULTS/tmp" --cluster-search 1 --prefilter-mode 1 --sort-by-structure-bits 0 -e 10000 -s 9 --max-seqs 100 -a --remove-tmp-files 0
 
 "${EVALUATE}" "$SCOPANOTATION" "$RESULTS/results_aln.m8" > "${RESULTS}/evaluation.log"
